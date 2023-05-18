@@ -1,0 +1,23 @@
+/* To learn more about this file see: https://angular.io/config/tsconfig. */
+{
+  "extends": "../../../../redbox-portal/angular/tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../../../../redbox-portal/angular/out-tsc/lib",
+    "declaration": true,
+    "declarationMap": true,
+    "inlineSources": true,
+    "types": [],
+    "baseUrl": "./",
+    "paths": {
+      "@researchdatabox/portal-ng-common": [
+        "../../../../redbox-portal/angular/dist/researchdatabox/portal-ng-common"
+      ],
+      "*": [
+        "../../../../redbox-portal/angular/node_modules/*"
+      ]
+    }
+  },
+  "exclude": [
+    "**/*.spec.ts"
+  ]
+}
