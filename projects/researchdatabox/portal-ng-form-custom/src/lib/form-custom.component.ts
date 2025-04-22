@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
-import { FormBaseComponent } from '@researchdatabox/portal-ng-common';
+import { Component, Input } from '@angular/core';
+import { FieldComponent, FieldComponentConfig } from '@researchdatabox/portal-ng-common';
 import { CommonModule } from '@angular/common';
+import { FormCustomFieldModel } from './form-custom.model';
 
 @Component({
   selector: 'redbox-custom-sample-component',
@@ -14,6 +15,9 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule]
 })
-export class FormCustomComponent extends FormBaseComponent {
-
+export class FormCustomComponent extends FieldComponent<undefined> {
+  @Input() public override field?: FormCustomFieldModel;
+  public override config?: FieldComponentConfig<undefined>;
 }
+
+

@@ -4,4 +4,5 @@
 
 export * from './lib/form-custom.service';
 export * from './lib/form-custom.component';
+export * from './lib/form-custom.model';
 export * from './lib/form-custom.module';
