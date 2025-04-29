@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { FormComponentResolver, FormFieldResolver, FieldComponent, FieldModel } from '@researchdatabox/portal-ng-common';
+import { FormComponentResolver, FormFieldResolver, FormFieldComponent, FormFieldModel } from '@researchdatabox/portal-ng-common';
 
 @Injectable({
   providedIn: 'root'
@@ -10,21 +10,21 @@ export class PortalNgFormCustomService implements FormComponentResolver , FormFi
   private fieldClassMap: any;
 
   
-  public async getFieldClass(fieldClass: string): Promise<typeof FieldModel> {
+  public async getFieldClass(fieldClass: string): Promise<typeof FormFieldModel> {
     if (fieldClass == 'FormCustomFieldModel') {
       // Since we know there is only one custom field model file, we optimise the import. 
       // However, there is nothing stopping us from having multiple custom field model files.
       // In that case, we would need to import the file dynamically, as in below:
       // return (await import('./form-custom.model'))[fieldClass] as typeof FieldModel;
-      return (await this.getFieldClassMap())[fieldClass] as typeof FieldModel;
+      return (await this.getFieldClassMap())[fieldClass] as typeof FormFieldModel;
     }
     throw new Error(`Failed to resolve field: ${fieldClass}`);
   }
 
-  public async getComponentClass(componentName: string): Promise<typeof FieldComponent> {
+  public async getComponentClass(componentName: string): Promise<typeof FormFieldComponent> {
     if (componentName == 'FormCustomComponent') {
       // return (await import('./form-custom.component'))[componentName] as typeof FieldComponent;
-      return (await this.getComponentClassMap())[componentName] as typeof FieldComponent;
+      return (await this.getComponentClassMap())[componentName] as typeof FormFieldComponent;
     }
     throw new Error(`Failed to resolve component: ${componentName}`);
   }
