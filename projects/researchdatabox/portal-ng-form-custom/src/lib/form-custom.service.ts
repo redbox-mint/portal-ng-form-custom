@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { FormComponentResolver, FormFieldResolver, FormFieldComponent, FormFieldModel } from '@researchdatabox/portal-ng-common';
+import { FormComponentResolver, FormFieldResolver, FormFieldBaseComponent, FormFieldModel } from '@researchdatabox/portal-ng-common';
 
 @Injectable({
   providedIn: 'root'
@@ -21,10 +21,10 @@ export class PortalNgFormCustomService implements FormComponentResolver , FormFi
     throw new Error(`Failed to resolve field: ${fieldClass}`);
   }
 
-  public async getComponentClass(componentName: string): Promise<typeof FormFieldComponent> {
+  public async getComponentClass(componentName: string): Promise<typeof FormFieldBaseComponent> {
     if (componentName == 'FormCustomComponent') {
       // return (await import('./form-custom.component'))[componentName] as typeof FieldComponent;
-      return (await this.getComponentClassMap())[componentName] as typeof FormFieldComponent;
+      return (await this.getComponentClassMap())[componentName] as typeof FormFieldBaseComponent;
     }
     throw new Error(`Failed to resolve component: ${componentName}`);
   }

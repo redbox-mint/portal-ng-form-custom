@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { FormFieldComponent, FormComponentConfig } from '@researchdatabox/portal-ng-common';
+import { FormFieldBaseComponent, FormComponentConfig } from '@researchdatabox/portal-ng-common';
 import { CommonModule } from '@angular/common';
 import { FormCustomFieldModel } from './form-custom.model';
 
@@ -15,7 +15,7 @@ import { FormCustomFieldModel } from './form-custom.model';
   standalone: true,
   imports: [CommonModule]
 })
-export class FormCustomComponent extends FormFieldComponent<undefined> {
+export class FormCustomComponent extends FormFieldBaseComponent<undefined> {
 }
 
 
